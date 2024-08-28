@@ -1,16 +1,20 @@
-package com.websockets.websockets;
+package com.websockets.websockets.models;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Users")
 public class User {
+    
     private String username;
     private String password;
+    @Id
     private String userId;
 
     public User () {}
     
-    public User(String username, String password, String userId) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.userId = userId;
     }
 
     public String getUsername() {
@@ -27,10 +31,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getUserId() {

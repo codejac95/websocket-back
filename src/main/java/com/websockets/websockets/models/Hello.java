@@ -1,4 +1,4 @@
-package com.websockets.websockets;
+package com.websockets.websockets.models;
 
 public class Hello {
     private String content;

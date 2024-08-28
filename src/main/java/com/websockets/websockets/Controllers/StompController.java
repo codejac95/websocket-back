@@ -1,8 +1,13 @@
-package com.websockets.websockets;
+package com.websockets.websockets.Controllers;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+
+import com.websockets.websockets.models.Chat;
+import com.websockets.websockets.models.ChatMessage;
+import com.websockets.websockets.models.Hello;
+import com.websockets.websockets.models.HelloMessage;
 
 @Controller
 public class StompController {
