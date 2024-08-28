@@ -35,8 +35,8 @@ public class UserController {
     }
 
     @PostMapping("/createUser")
-    public String createUser(@RequestBody User user) {
-        return userService.registerUser(user.getUsername(), user.getPassword());
+    public User createUser(@RequestBody User user) {
+        return userService.createUser(user);
     }
 
 

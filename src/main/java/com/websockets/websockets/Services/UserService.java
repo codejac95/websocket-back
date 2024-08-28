@@ -32,19 +32,9 @@ public class UserService {
         return mongoOperations.findOne(query, User.class);
     }
 
-    public String registerUser(String username, String password) {
-        User existingUser = getUsername(username);
-        if (existingUser == null){
-            User user = new User(username, password);
-            createUser(user);
-            return "success";  
-        } else {
-            return "Användarnamnet är upptaget.";
-        }      
-    }
 
-    public void createUser(User user) {
-        mongoOperations.save(user);
+    public User createUser(User user) {
+       return mongoOperations.save(user);
     }
 
 }
