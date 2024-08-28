@@ -15,7 +15,7 @@ import com.websockets.websockets.Services.UserService;
 import com.websockets.websockets.models.User;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     private UserService userService;
