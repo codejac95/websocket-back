@@ -16,10 +16,10 @@ public class StompController {
     @SendTo("/topic/greetings")
     public Hello hello(HelloMessage message) {
         System.out.println("/Hello");
-        return new Hello(message.getName() + " has entered the chat!");
+        return new Hello("("+message.getName() + " has entered the chat!)");
     }
 
-    @MessageMapping("/chat")
+    @MessageMapping("/chat")    
     @SendTo("/topic/chat")
     public Chat chat(ChatMessage chat) {
         System.out.println("/chat");
