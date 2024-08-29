@@ -23,6 +23,6 @@ public class StompController {
     @SendTo("/topic/chat")
     public Chat chat(ChatMessage chat) {
         System.out.println("/chat");
-        return new Chat(chat.getContent());
+        return new Chat(chat.getUser() +"-" + chat.getContent());
     }
 }
