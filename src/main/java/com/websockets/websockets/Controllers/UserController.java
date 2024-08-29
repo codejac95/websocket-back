@@ -15,22 +15,22 @@ import com.websockets.websockets.Services.UserService;
 import com.websockets.websockets.models.User;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin("*")
 public class UserController {
     @Autowired
     private UserService userService;
-    
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping("/user")
-    public List <User> getAllUsers() {
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/user/{id}")
-    public List <User> getUserByid(@PathVariable String id) {
+    public List<User> getUserByid(@PathVariable String id) {
         return userService.getUserById(id);
     }
 
@@ -39,5 +39,10 @@ public class UserController {
         return userService.createUser(user);
     }
 
+    @PostMapping("/loginUser")
+    public User loginUser(@PathVariable String username, String password) {
+
+        return userService.loginUser(username, password);
+    }
 
 }
