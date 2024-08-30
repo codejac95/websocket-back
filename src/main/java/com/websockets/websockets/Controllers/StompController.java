@@ -21,8 +21,8 @@ public class StompController {
 
     @MessageMapping("/chat")    
     @SendTo("/topic/chat")
-    public Chat chat(ChatMessage chat) {
+    public Chat chat(ChatMessage chatMessage) {
         System.out.println("/chat");
-        return new Chat(chat.getUser() +"-" + chat.getContent());
+        return new Chat(chatMessage.getContent(), chatMessage.getUser());
     }
 }
