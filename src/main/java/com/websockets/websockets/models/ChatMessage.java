@@ -1,19 +1,23 @@
 package com.websockets.websockets.models;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ChatMessage")
 public class ChatMessage {
     private String content;
     private String user;
-    public ChatMessage() {}
-    
+    @Id
+    private String id;
+
+    public ChatMessage() {
+    }
+
     public ChatMessage(String content, String user) {
         this.content = content;
         this.user = user;
     }
 
-    
     public String getContent() {
         return content;
     }
@@ -30,5 +34,12 @@ public class ChatMessage {
         this.user = user;
     }
 
-    
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }

@@ -40,12 +40,14 @@ public class UserController {
     }
 
     @PostMapping("/loginUser")
-    public User loginUser(@RequestBody User user) {
+    public Object loginUser(@RequestBody User user) {
 
-        String username = user.getUsername();
-        String password = user.getPassword();
-
-        return userService.loginUser(username, password);
+        User existingUser = userService.getUsername(user.getUsername());
+        if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
+            return existingUser;
+        } else {
+            return null;
+        }
     }
 
 }

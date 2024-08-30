@@ -1,5 +1,6 @@
 package com.websockets.websockets.Services;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -29,6 +30,12 @@ public class UserService {
 
     public User loginUser(String username, String password) {
         Query query = Query.query(Criteria.where("username").is(username).and("password").is(password));
+
+        return mongoOperations.findOne(query, User.class);
+    }
+
+    public User getUsername(String username) {
+        Query query = Query.query(Criteria.where("username").is(username));
         return mongoOperations.findOne(query, User.class);
     }
 
