@@ -1,20 +1,20 @@
 package com.websockets.websockets.models;
 
-public class Chat {
-    private String chat;
+public class ChatRoom {
+    private String chatRoom;
     private String user;
 
-    public Chat(String chat,String user) {
-        this.chat = chat;
+    public ChatRoom(String chatRoom, String user) {
+        this.chatRoom = chatRoom;
         this.user = user;
     }
 
     public String getChat() {
-        return chat;
+        return chatRoom;
     }
 
-    public void setChat(String chat) {
-        this.chat = chat;
+    public void setChat(String chatRoom) {
+        this.chatRoom = chatRoom;
     }
 
     public String getUser() {

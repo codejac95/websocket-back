@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ChatMessage")
 public class ChatMessage {
+    private String chatRoom;
     private String content;
     private String user;
     @Id
@@ -40,6 +41,14 @@ public class ChatMessage {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getChatRoom() {
+        return chatRoom;
+    }
+
+    public void setChatRoom(String chatRoom) {
+        this.chatRoom = chatRoom;
     }
 
 }
