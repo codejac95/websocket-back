@@ -29,6 +29,7 @@ public class ChatMessageController {
 
     @GetMapping("/getRoomMessages")
     public List<ChatMessage> ChatMessageList(@RequestBody String roomName) {
+        System.out.println("tjoho");
         return chatMessageService.getRoomMessages(roomName);
     }
 
